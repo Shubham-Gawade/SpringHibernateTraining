@@ -1,0 +1,16 @@
+package com.xoriant.springbootappclientapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.client.RestTemplate;
+
+@SpringBootApplication
+public class SpringbootClientAppApplication {
+
+	private RestTemplate restTemplate;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootClientAppApplication.class, args);
+	}
+
+}

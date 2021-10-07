@@ -1,0 +1,20 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xoriant.xorbankonline.dao.ManagerDao;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.service.ManagerService;
+
+@Service
+public class ManagerServiceImpl implements ManagerService {
+
+	@Autowired
+	private ManagerDao managerDao;
+	
+	@Override
+	public void addCustomer(Customer customer) {	
+		return managerDao.addCustomer(customer);
+	}
+}

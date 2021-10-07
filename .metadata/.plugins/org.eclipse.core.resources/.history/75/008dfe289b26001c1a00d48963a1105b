@@ -1,0 +1,8 @@
+package com.xoriant.xorbankonline.service;
+
+import com.xoriant.xorbankonline.model.Customer;
+
+public interface ManagerService {
+
+	public boolean addCustomer(Customer customer);
+}

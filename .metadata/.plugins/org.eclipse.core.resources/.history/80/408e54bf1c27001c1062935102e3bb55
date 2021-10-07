@@ -1,0 +1,25 @@
+package com.xoriant.xorbankonline.dao;
+
+import java.util.List;
+
+import com.xoriant.xorbankonline.model.Account;
+import com.xoriant.xorbankonline.model.Branch;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.model.Manager;
+
+public interface ManagerDao {
+
+	public boolean addCustomer(Customer customer);
+
+	public boolean addAccount(Account account, long id);
+
+	public List<Customer> getAllCustomerDetails();
+
+	public Account getAccountDetails(long accountNumber);
+
+	public Customer getCustomer(long customerId);
+
+	public Manager getManagerDetails(long managerId);
+
+	public Branch getBranch(long managerId);
+}

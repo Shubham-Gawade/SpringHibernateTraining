@@ -1,0 +1,42 @@
+package com.xoriant.xorbankonline.dao.impl;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.xorbankonline.dao.UserDao;
+import com.xoriant.xorbankonline.model.User;
+import com.xoriant.xorbankonline.utility.SessionFactoryUtil;
+
+@Repository
+public class UserDaoImpl implements UserDao {
+
+	@Override
+	public User getUser(String userName, String password) {
+		
+		Transaction transaction = null;
+		Session session = null;
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		User user=new User();
+		try {
+			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
+			
+			Query query = session.getNamedQuery("findUser");
+			query.setString("userName",userName);
+			query.setString("password",password);
+			user=(User)query.uniqueResult();
+			
+			transaction.commit();
+		} catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+		} finally {
+			session.close();
+		}
+		
+		return user;
+	}
+}

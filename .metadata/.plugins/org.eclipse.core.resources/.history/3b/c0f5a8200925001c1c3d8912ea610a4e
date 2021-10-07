@@ -1,0 +1,37 @@
+package com.xoriant.xorbankonline.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.xoriant.xorbankonline.enums.Role;
+import com.xoriant.xorbankonline.model.User;
+import com.xoriant.xorbankonline.service.UserService;
+
+@Controller
+public class UserController {
+	
+	@Autowired
+	private UserService userService;
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String loginRequestParam(@RequestParam("userName") String userName,
+			@RequestParam("password") String password) {
+
+		User user=userService.getUser(userName,password);
+		if (userName.equals(user.getUserName()) && password.equals(user.getPassword())) {
+			if(user.getRole().equals(Role.MANAGER)) {
+				return "managerhome";
+			}
+			else {
+				return "customerhome";
+			}
+		}
+
+		else {
+			return "index";
+		}
+	}
+}

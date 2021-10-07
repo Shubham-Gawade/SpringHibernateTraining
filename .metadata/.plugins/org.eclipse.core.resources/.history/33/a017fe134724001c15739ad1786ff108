@@ -1,0 +1,18 @@
+package com.xoriant.xorbankonline.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Customer1 extends PersonInfo1 {
+	
+	private double minBalance;
+
+	public double getMinBalance() {
+		return minBalance;
+	}
+
+	public void setMinBalance(double minBalance) {
+		this.minBalance = minBalance;
+	}
+}

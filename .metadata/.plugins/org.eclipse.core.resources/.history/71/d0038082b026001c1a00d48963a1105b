@@ -1,0 +1,24 @@
+package com.xoriant.xorbankonline.service;
+
+import java.util.List;
+
+import com.xoriant.xorbankonline.model.Account;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.model.Manager;
+
+public interface ManagerService {
+
+	public boolean addCustomer(Customer customer);
+
+	public boolean addAccount(Account account, int id);
+
+	public List<Customer> getAllCustomerDetails();
+
+	public Account getAccountDetails(long accountNumber);
+
+	public Customer getCustomer(int customerId);
+
+	public Manager getManagerDetails(int managerId);
+
+	public int getBranchId(int managerId);
+}

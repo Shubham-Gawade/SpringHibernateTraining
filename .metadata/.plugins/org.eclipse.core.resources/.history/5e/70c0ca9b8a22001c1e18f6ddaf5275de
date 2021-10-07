@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Add Customer</h1>
+<form action="addemployee" method="post">
+	Customer ID: <input type="text" name="personId"/><br/>
+	Customer Name: <input type="text" name="customerName"/><br/>
+	Date Of Birth: <input type="date" name="dateOfBirth"/><br/>
+	Gender: <input type="text" name="gender"/><br/>
+	City: <input name="city"/><br/>
+	<input type="submit" value="Add Employee"/>
+</form>
+
+protected long personId;
+	protected String personName;
+	protected Gender gender;
+	protected LocalDate dateOfBirth;
+	protected String emailId;
+	protected long mobileNo;
+	private int doorNo;
+	private String city;
+	private String area;
+	private String state;
+	private int pincode;
+</body>
+</html>

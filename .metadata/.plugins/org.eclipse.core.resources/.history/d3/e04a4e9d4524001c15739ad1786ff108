@@ -1,0 +1,8 @@
+package com.xoriant.xorbankonline.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Customer1 {
+
+}

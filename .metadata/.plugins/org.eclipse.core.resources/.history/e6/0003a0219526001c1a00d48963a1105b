@@ -1,0 +1,5 @@
+package com.xoriant.springbootappmvc.model;
+
+public class User {
+
+}

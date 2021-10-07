@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+protected long personId;
+	protected String personName;
+	protected Gender gender;
+	protected LocalDate dateOfBirth;
+	protected String emailId;
+	protected long mobileNo;
+	private int doorNo;
+	private String city;
+	private String area;
+	private String state;
+	private int pincode;
+</body>
+</html>

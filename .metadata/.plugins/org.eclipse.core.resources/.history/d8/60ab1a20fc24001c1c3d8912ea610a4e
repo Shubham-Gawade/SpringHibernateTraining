@@ -1,0 +1,8 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import com.xoriant.xorbankonline.dao.UserDao;
+import com.xoriant.xorbankonline.service.UserService;
+
+public class UserServiceImpl implements UserService {
+	public UserDao Unnamed1;
+}

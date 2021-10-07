@@ -1,0 +1,6 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import com.xoriant.xorbankonline.service.ManagerService;
+
+public class ManagerServiceImpl implements ManagerService {
+}

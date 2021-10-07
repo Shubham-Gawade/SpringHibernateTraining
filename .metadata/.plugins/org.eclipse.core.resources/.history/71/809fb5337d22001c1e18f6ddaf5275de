@@ -1,0 +1,7 @@
+package com.xoriant.xorbankonline.service.impl;
+
+
+
+public class ManagerServiceImpl implements ManagerService {
+	public ManagerDao Unnamed1;
+}

@@ -1,0 +1,5 @@
+package com.xoriant.xorbankonline.constants;
+
+public final class ApplicationConstants {
+
+}

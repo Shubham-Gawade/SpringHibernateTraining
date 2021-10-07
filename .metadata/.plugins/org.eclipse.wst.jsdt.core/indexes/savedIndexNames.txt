@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\JavaTrg-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1024483488.index
+891194164.index
+1147977253.index
+3955024896.index
+3398358044.index

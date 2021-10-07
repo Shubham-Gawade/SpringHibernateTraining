@@ -1,0 +1,15 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import com.xoriant.xorbankonline.dao.CustomerDao;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.service.CustomerService;
+
+public class CustomerServiceImpl implements CustomerService {
+	public CustomerDao Unnamed1;
+
+	@Override
+	public boolean addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

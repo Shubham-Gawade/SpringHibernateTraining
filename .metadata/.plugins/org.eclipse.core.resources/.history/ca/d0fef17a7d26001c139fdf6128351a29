@@ -1,0 +1,54 @@
+package com.xoriant.springbootapp.service.impl;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.xoriant.springbootapp.model.Employee;
+import com.xoriant.springbootapp.service.EmployeeService;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	private List<Employee> employees;
+	
+	{
+		employees=new ArrayList<Employee>(Arrays.asList(
+				new Employee(101,"Shubham",20000);
+				
+				));
+	}
+	
+	@Override
+	public List<Employee> getEmployee(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateEmployee(Employee employee, int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteEmployee(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

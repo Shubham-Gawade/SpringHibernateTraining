@@ -1,0 +1,17 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.service.CustomerService;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+	@Override
+	public Customer getCustomerDetails() {
+		
+		return null;
+	}
+	
+}

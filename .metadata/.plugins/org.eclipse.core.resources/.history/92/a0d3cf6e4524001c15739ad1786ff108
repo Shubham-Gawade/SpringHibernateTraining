@@ -1,0 +1,89 @@
+package com.xoriant.xorbankonline.model;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.xoriant.xorbankonline.enums.AccountType;
+import com.xoriant.xorbankonline.enums.Gender;
+import com.xoriant.xorbankonline.enums.Role;
+
+public class HibernateClient2 
+{
+	public static void main(String[] args) {
+		
+		Address address1=new Address();
+		address1.setAdddressId(1);
+		address1.setArea("Baner");
+		address1.setCity("Pune");
+		address1.setDoorNo(22);
+		address1.setState("Maharashtra");
+		address1.setPincode(784824);
+		
+		Branch branch1=new Branch();
+		branch1.setBranchId(201);
+		branch1.setBranchName("XoriantBaner");
+		branch1.setIfscCode("XORB00234");
+		branch1.setMicrCode("98765432");
+		branch1.setAddress(address1);
+		
+		User user1=new User();
+		user1.setUserName("shubhamg");
+		user1.setPassword("12345");
+		user1.setSecurityQuestion("Favoirate sport?");
+		user1.setSecurityAnswer("cricket");
+		user1.setRole(Role.CUSTOMER);
+		
+		Customer customer1=new Customer();
+		customer1.setPersonId(101);
+		customer1.setPersonName("Shubham");
+		customer1.setDateOfBirth(null);
+		customer1.setGender(Gender.MALE);
+		customer1.setEmailId("abc@gmail.com");
+		customer1.setMobileNo(985342736);
+		
+		Address address2=new Address();
+		address2.setAdddressId(2);
+		address2.setArea("Viman nagar");
+		address2.setCity("Pune");
+		address2.setDoorNo(12);
+		address2.setState("Maharashtra");
+		address2.setPincode(784824);
+		
+		customer1.setAddress(address2);
+		
+		//Personinfo has a user
+		customer1.setUser(user1);
+		//User has a personinfo
+		user1.setPersonInfo(customer1);
+
+		Account account1=new Account();
+		account1.setAccountNumber(123456);
+		account1.setAccountType(AccountType.SAVINGS);
+		account1.setBalance(5000);
+		
+		Account account2=new Account();
+		account2.setAccountNumber(123444);
+		account2.setAccountType(AccountType.CURRENT);
+		account2.setBalance(6000);
+		
+		customer1.addAccount(account1);
+		customer1.addAccount(account2);
+		
+		Transaction transaction=null;
+		Session session=null;
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+				
+		try {
+			session=sessionFactory.openSession();
+			transaction=session.beginTransaction();
+			session.persist(customer1);
+			transaction.commit();
+		}catch(Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+		}finally {
+			session.close();
+		}
+	}
+}

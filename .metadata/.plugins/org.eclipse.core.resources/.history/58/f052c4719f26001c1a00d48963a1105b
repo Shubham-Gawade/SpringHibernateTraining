@@ -1,0 +1,11 @@
+package com.xoriant.xorbankonline.dao;
+
+import com.xoriant.xorbankonline.model.Account;
+import com.xoriant.xorbankonline.model.Customer;
+
+public interface ManagerDao {
+
+	public boolean addCustomer(Customer customer);
+
+	public boolean addAccount(Account account, int id);
+}

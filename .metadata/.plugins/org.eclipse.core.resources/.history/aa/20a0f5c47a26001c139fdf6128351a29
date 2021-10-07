@@ -1,0 +1,5 @@
+package com.xoriant.springbootapp.service;
+
+public interface EmployeeService {
+
+}

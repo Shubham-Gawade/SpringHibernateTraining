@@ -1,0 +1,7 @@
+package com.xoriant.xorbankonline.dao.service;
+
+
+
+
+public interface ManagerService extends UserService {
+}

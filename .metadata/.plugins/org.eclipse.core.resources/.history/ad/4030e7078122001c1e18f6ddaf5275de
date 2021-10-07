@@ -1,0 +1,16 @@
+package com.xoriant.xorbankonline.model;
+
+import java.time.LocalDateTime;
+import com.xoriant.xorbankonline.enums.TransactionType;
+
+
+
+public class Transaction {
+	private long transactionId;
+	private long payeeAccountNumber;
+	private double transactionAmount;
+	private LocalDateTime transactionDate;
+	private TransactionType transactionType;
+	
+	
+}

@@ -1,0 +1,49 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xoriant.xorbankonline.dao.ManagerDao;
+import com.xoriant.xorbankonline.model.Account;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.model.Manager;
+import com.xoriant.xorbankonline.service.ManagerService;
+
+@Service
+public class ManagerServiceImpl implements ManagerService {
+
+	@Autowired
+	private ManagerDao managerDao;
+	
+	@Override
+	public boolean addCustomer(Customer customer) {	
+		return managerDao.addCustomer(customer);
+	}
+
+	@Override
+	public boolean addAccount(Account account, int id) {
+		return managerDao.addAccount(account,id);
+	}
+
+	@Override
+	public List<Customer> getAllCustomerDetails() {
+		return managerDao.getAllCustomerDetails();
+	}
+
+	@Override
+	public Account getAccountDetails(long accountNumber) {
+		return managerDao.getAccountDetails(accountNumber);
+	}
+
+	@Override
+	public Customer getCustomer(int customerId) {
+		return managerDao.getCustomer(customerId);
+	}
+
+	@Override
+	public Manager getManagerDetails(int userId) {
+		return managerDao.getManagerDetails(int userId);
+	}
+}

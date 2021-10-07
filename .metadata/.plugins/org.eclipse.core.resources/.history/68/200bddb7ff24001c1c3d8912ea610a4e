@@ -1,0 +1,19 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.xoriant.xorbankonline.dao.UserDao;
+import com.xoriant.xorbankonline.model.User;
+import com.xoriant.xorbankonline.service.UserService;
+
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	UserDao userDao;
+
+	@Override
+	public User getUser(String userName, String password) {
+		return userDao.getUser(userName,password);
+	}
+	
+}

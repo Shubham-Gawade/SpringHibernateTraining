@@ -1,0 +1,11 @@
+package com.xoriant.springbootapp.resource;
+
+public class EmployeeResource {
+	
+	
+	public String getEmployees() {
+		
+		return "All EMployees";
+	}
+
+}

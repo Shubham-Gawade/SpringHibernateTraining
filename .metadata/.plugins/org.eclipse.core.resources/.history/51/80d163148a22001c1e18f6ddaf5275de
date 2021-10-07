@@ -1,0 +1,21 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.xoriant.xorbankonline.dao.CustomerDao;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.service.CustomerService;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+	
+	@Autowired
+	public CustomerDao Unnamed1;
+
+	@Override
+	public boolean addCustomer(Customer customer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

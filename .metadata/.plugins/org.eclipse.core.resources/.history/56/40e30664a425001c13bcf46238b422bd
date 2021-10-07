@@ -1,0 +1,46 @@
+package com.xoriant.xorbankonline.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.xorbankonline.dao.CustomerDao;
+import com.xoriant.xorbankonline.model.Account;
+import com.xoriant.xorbankonline.model.Address;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.model.PersonInfo;
+import com.xoriant.xorbankonline.utility.SessionFactoryUtil;
+
+@Repository
+public class CustomerDaoImpl implements CustomerDao {
+
+	@Override
+	public Customer getCustomer(int userId) {
+		
+		Transaction transaction = null;
+		Session session = null;
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Customer customer=new Customer();
+		try {
+			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
+			
+			Query query1 = session.createQuery(
+			  "from personinfo where userId:=", PersonInfo.class);
+			query1.setParameter("userId", userId);
+			customer = (Customer)query1.uniqueResult();
+		} catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+		} finally {
+			session.close();
+		}
+		
+		return customer;
+	}
+}

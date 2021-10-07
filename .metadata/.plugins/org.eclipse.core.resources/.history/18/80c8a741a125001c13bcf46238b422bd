@@ -1,0 +1,59 @@
+package com.xoriant.xorbankonline.dao.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
+
+import com.xoriant.xorbankonline.dao.CustomerDao;
+import com.xoriant.xorbankonline.model.Account;
+import com.xoriant.xorbankonline.model.Address;
+import com.xoriant.xorbankonline.model.Customer;
+import com.xoriant.xorbankonline.model.PersonInfo;
+import com.xoriant.xorbankonline.utility.SessionFactoryUtil;
+
+@Repository
+public class CustomerDaoImpl implements CustomerDao {
+
+	@Override
+	public Customer getCustomer() {
+		
+		Transaction transaction = null;
+		Session session = null;
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+		Customer customer=new Customer();
+		PersonInfo personInfo=new PersonInfo();
+		Address address=new Address();
+		List<Account> accounts=new ArrayList<>();
+		try {
+			session = sessionFactory.openSession();
+			transaction = session.beginTransaction();
+			
+			Query<PersonInfo> query1 = session.createQuery(
+			  "from personinfo where userId:=", PersonInfo.class);
+			query1.setParameter("userId", "1");
+			personInfo = (PersonInfo)query1.uniqueResult();
+			
+			Query<Address> query2 = session.createQuery(
+			  "from personinfo where userId:=", Address.class);
+			query2.setParameter("userId", personInfo.getAddress().getAdddressId());
+			address = (Address)query2.uniqueResult();
+			
+			Query<Account> query3 = session.createQuery(
+			  "from account where userId:=", Account.class);
+			query2.setParameter("userId", personInfo.getAddress().getAdddressId());
+			accounts = (List<Account>)query3.list();
+		} catch (Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+		} finally {
+			session.close();
+		}
+		
+		return customer;
+	}
+}

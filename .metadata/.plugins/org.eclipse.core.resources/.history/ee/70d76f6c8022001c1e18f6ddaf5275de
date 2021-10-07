@@ -1,0 +1,10 @@
+package com.xoriant.xorbankonline.model;
+
+import com.xoriant.xorbankonline.enums.AccountType;
+
+public class CurrentAccount extends Account {
+	private int transactionsLimit;
+	private double minimumBalance;
+	private double transactionAmountLimit;
+	public AccountType accountType;
+}

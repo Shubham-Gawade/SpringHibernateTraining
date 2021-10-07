@@ -1,0 +1,8 @@
+package com.xoriant.xorbankonline.model;
+
+import java.util.List;
+
+public class Manager extends PesonInfo {
+	private Branch branch;
+	private List<User> users;
+}

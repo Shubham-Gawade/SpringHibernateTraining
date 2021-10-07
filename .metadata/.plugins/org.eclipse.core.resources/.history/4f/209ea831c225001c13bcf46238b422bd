@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Account Details</h1>
+	<br>
+	<h5>Customer Id : ${customer.getPersonId()}</h5>
+	<h5>Name : ${customer.getPersonName()}</h5>
+	<h5>Gender : ${customer.getGender()}</h5>
+	<br>
+	<h4>Account Details</h4>
+	<table class="table">
+		<tr>
+			<td>Account Number</td>
+			<td>Account Type</td>
+			<td>Balance</td>
+			<td></td>
+		</tr>
+		<c:forEach items="${customer.accounts}" var="account">
+			<tr>
+				<td>${account.getAccountNumber()}</td>
+				<td>${account.getAccountType()}</td>
+				<td>${account.getBalance()}</td>
+				<td><a href="accountdetails/${account.getAccountNumber()}"><button>Go To Account</button></a></td>
+			</tr>
+		</c:forEach>
+	</table>
+</body>
+</html>

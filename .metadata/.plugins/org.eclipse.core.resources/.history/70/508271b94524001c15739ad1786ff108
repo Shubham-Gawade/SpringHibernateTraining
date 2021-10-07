@@ -1,0 +1,69 @@
+package com.xoriant.xorbankonline.model;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import com.xoriant.xorbankonline.enums.Gender;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class PersonInfo1 {
+
+	@Id
+	protected long personId;
+	protected String personName;
+	protected Gender gender;
+
+	@OneToOne
+	@JoinColumn(name = "addressId")
+	protected Address address;
+
+	@OneToOne(cascade = CascadeType.PERSIST)
+	protected User user;
+
+	public long getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(long personId) {
+		this.personId = personId;
+	}
+
+	public String getPersonName() {
+		return personName;
+	}
+
+	public void setPersonName(String personName) {
+		this.personName = personName;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+}

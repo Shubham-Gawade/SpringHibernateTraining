@@ -1,0 +1,14 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import com.xoriant.xorbankonline.model.User;
+import com.xoriant.xorbankonline.service.CustomerService;
+
+public class CustomerServiceImpl implements CustomerService {
+
+	@Override
+	public User getUser(String userName, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

@@ -1,0 +1,94 @@
+package com.xoriant.xorbankonline.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import com.xoriant.xorbankonline.enums.Gender;
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+public class PersonInfo {
+
+	@Id
+	protected long personId;
+	protected String personName;
+	protected Gender gender;
+	protected LocalDate dateOfBirth;
+	protected String emailId;
+	protected long mobileNo;
+
+	@OneToOne(cascade = CascadeType.PERSIST)
+	protected Address address;
+
+	@OneToOne(cascade = CascadeType.PERSIST)
+	protected User user;
+
+	public long getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(long personId) {
+		this.personId = personId;
+	}
+
+	public String getPersonName() {
+		return personName;
+	}
+
+	public void setPersonName(String personName) {
+		this.personName = personName;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+	public LocalDate getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(LocalDate dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public long getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(long mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+}

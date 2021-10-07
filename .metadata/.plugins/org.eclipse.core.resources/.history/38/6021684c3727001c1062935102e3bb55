@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class="container">
+	<h1>Add Account</h1>
+	<form:form action="addaccount" method="post">
+        <label >Account Type :</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" name="accountType" value="SAVINGS">
+            <label class="form-check-label" >Savings</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" name="accountType" value="CURRENT">
+            <label class="form-check-label" >Current</label>
+        </div>
+        <div class="form-group">
+			<label for="balance">Balance :</label>
+			<form:input type="text" path="balance" class="form-control"
+				name="balance" />
+		</div>
+		<div class="form-group">
+			<label for="interestRate">Interest Rate :</label>
+			<form:input type="text" path="interestRate" class="form-control"
+				name="interestRate" />
+		</div>
+		<div class="form-group">
+			<label for="minimumBalance">Minimum Balance :</label>
+			<form:input type="text" path="minimumBalance" class="form-control"
+				name="minimumBalance" />
+		</div>
+		<div class="form-group">
+			<label for="transactionsLimit">Transactions Limit :</label>
+			<form:input type="text" path="transactionsLimit" class="form-control"
+				name="transactionsLimit" />
+		</div>
+		<div class="form-group">
+			<label for="transactionAmountLimit">Transaction Amount Limit :</label>
+			<form:input type="text" path="transactionAmountLimit" class="form-control"
+				name="transactionAmountLimit" />
+		</div>
+		<input class="btn btn-primary" type="submit" value="Add Account"/>
+	</form:form>
+</body>
+</html>

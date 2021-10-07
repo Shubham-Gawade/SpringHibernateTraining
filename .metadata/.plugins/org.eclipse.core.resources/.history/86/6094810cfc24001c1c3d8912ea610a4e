@@ -1,0 +1,7 @@
+package com.xoriant.xorbankonline.service.impl;
+
+import com.xoriant.xorbankonline.service.CustomerService;
+
+public class CustomerServiceImpl implements CustomerService {
+	
+}

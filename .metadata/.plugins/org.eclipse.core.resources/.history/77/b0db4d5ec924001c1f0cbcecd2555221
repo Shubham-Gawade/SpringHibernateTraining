@@ -1,0 +1,6 @@
+package com.xoriant.xorbankonline.service;
+
+import com.xoriant.xorbankonline.model.Customer;
+
+public interface CustomerService extends UserService {
+}

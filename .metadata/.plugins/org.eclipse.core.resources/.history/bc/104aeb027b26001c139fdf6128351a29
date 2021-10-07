@@ -1,0 +1,11 @@
+package com.xoriant.springbootapp.service;
+
+import java.util.List;
+
+import com.xoriant.springbootapp.model.Employee;
+
+public interface EmployeeService {
+
+	List<Employee> getEmployee(int id);
+
+}

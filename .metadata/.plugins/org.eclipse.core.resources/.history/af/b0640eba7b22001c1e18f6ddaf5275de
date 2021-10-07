@@ -1,0 +1,12 @@
+package com.xoriant.xorbankonline.model;
+
+
+
+
+public class Branch {
+	private long branchId;
+	private String branchName;
+	private String ifscCode;
+	private String micrCode;
+	public Address Unnamed2;
+}

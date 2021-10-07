@@ -1,0 +1,31 @@
+package com.xoriant.xorbankonline.model;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.xoriant.xorbankonline.enums.AccountType;
+import com.xoriant.xorbankonline.enums.Gender;
+import com.xoriant.xorbankonline.enums.Role;
+
+public class HibernateClient2 
+{
+	public static void main(String[] args) {
+		
+		
+		Transaction transaction=null;
+		Session session=null;
+		SessionFactory sessionFactory = SessionFactoryUtil.getSessionFactory();
+				
+		try {
+			session=sessionFactory.openSession();
+			transaction=session.beginTransaction();
+			transaction.commit();
+		}catch(Exception e) {
+			System.out.println(e);
+			transaction.rollback();
+		}finally {
+			session.close();
+		}
+	}
+}

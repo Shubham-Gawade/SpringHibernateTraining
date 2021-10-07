@@ -1,0 +1,5 @@
+package com.xoriant.springbootappclientapp.config;
+
+public class BeanConfiguration {
+
+}

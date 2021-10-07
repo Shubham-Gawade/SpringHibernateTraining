@@ -1,0 +1,7 @@
+package com.xoriant.xorbankonline.dao;
+
+
+
+
+public interface ManagerDao {
+}

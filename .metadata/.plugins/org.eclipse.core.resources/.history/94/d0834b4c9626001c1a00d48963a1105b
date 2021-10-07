@@ -1,0 +1,18 @@
+package com.xoriant.springbootappclientapp.resourse;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+import com.xoriant.springbootappclientapp.model.Employee;
+
+@RestController
+public class ClientResourse {
+
+	@GetMapping("/client")
+	public Employee getRequestedData(@PathVariable int id) {
+		RestTemplate restTemplate=new RestTemplate();
+		return restTemplate.getForObject("http://localhost:8080/employees/"+id, Employee.class);
+	}
+}

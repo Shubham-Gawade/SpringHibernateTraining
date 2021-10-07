@@ -1,0 +1,12 @@
+package com.xoriant.xorbankonline.constants;
+
+public final class ApplicationConstants {
+
+	private ApplicationConstants() {
+		
+	}
+	
+	private static final String INSUFICIENT_BALANCE="insuficient balance";
+	
+	private static final int 
+}
